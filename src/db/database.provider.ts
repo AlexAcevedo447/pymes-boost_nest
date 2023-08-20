@@ -1,12 +1,13 @@
-import * as mongoose from 'mongoose';
+import mongoose, { connect } from 'mongoose';
 import * as dotenv from 'dotenv';
+import { DB_PROVIDER_NAME } from 'src/constants';
 
 dotenv.config();
 
 export const databaseProviders = [
     {
-        provide: 'DATABASE_CONNECTION',
+        provide: DB_PROVIDER_NAME,
         useFactory: (): Promise<typeof mongoose> =>
-            mongoose.connect(<string>process.env.DB_URL),
+            connect(<string>process.env.DB_URL),
     },
 ];

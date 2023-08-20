@@ -11,15 +11,15 @@ const routes: Routes = [
         module: AppModule,
         children: [
             {
-                path: '/shelf',
+                path: '/shelfs',
                 module: ShelfModule,
             },
             {
-                path: '/product',
+                path: '/products',
                 module: ProductModule,
             },
             {
-                path: '/user',
+                path: '/users',
                 module: UserModule,
             },
         ],
